@@ -1,0 +1,52 @@
+db.places.insertMany([{id:1,name:"Places A",location:{type:"Point",coordinates:[-73.97,40.77]}}
+])
+
+db.places.insertOne([{id:2,name:"Places B",location:{type:"Point",coordinates:[-73.93,50.77]}}
+])
+
+db.places.insertOne([{id:3,name:"Places C",location:{type:"Point",coordinates:[-73.93,50.77]}}
+])
+
+
+db.places.insertOne([{id:4,name:"Places D",location:{type:"Point",coordinates:[-73.93,50.77]}}
+])
+
+
+db.places.insertOne([{id:5,name:"Places E",location:{type:"Point",coordinates:[-73.93,50.77]}}
+])
+
+db.places.find({location:{$near:{$geometry:{type:"Point",coordinates:[-73.97,40.77]},$maxDistance:1000}}})
+
+
+{
+  "id": 1,
+  "name": "Device A",
+  "Status": 5
+}
+
+db.devices.find({Status:{$bitsAllSet:2}})
+db.devices.find({"Status":{"$bitsAnySet":[0,3]}})
+
+
+{
+  "id": 1,
+  "name": "A",
+  "scores": [
+    {
+      "type": "exam",
+      "score": 90
+    },
+    {
+      "type": "quiz",
+      "score": 85
+    },
+    {
+      "type": "homework",
+      "score": 80
+    }
+  ]
+}
+db.TESTT.find({"name":"B"},{"name":1,"scores":{$elemMatch:{"type":"quiz"}}})
+db.TESTT.find({},{"name":1,"scores":{$slice:2}})
+db.TESTT.find({},{"name":1,"scores":{$slice:-1}})
+
