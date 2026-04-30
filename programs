@@ -58,6 +58,7 @@ db.devices.find({"Status":{"$bitsAnySet":[0,3]}})
     }
   ]
 }
+db.TESTT.find({"name":"A","scores.type":"exam"},{"name":1,"scores.$":1})
 db.TESTT.find({"name":"B"},{"name":1,"scores":{$elemMatch:{"type":"quiz"}}})
 db.TESTT.find({},{"name":1,"scores":{$slice:2}})
 db.TESTT.find({},{"name":1,"scores":{$slice:-1}})
