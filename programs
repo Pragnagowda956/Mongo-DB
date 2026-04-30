@@ -1,3 +1,15 @@
+{
+  "id": 1,
+  "name": "Place A",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -73.97,
+      40.77
+    ]
+  }
+}
+
 db.places.insertMany([{id:1,name:"Places A",location:{type:"Point",coordinates:[-73.97,40.77]}}
 ])
 
